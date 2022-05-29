@@ -4,6 +4,7 @@ import image from "./playVideo/test.png";
 import "./font/font.css";
 import { Client } from "@stomp/stompjs";
 import { UserDispatch } from "./App";
+import "./Chatting.css";
 
 const Chat = (prop) => {
   const name = prop.name;
@@ -80,6 +81,17 @@ const Chat = (prop) => {
     }
     console.log("disconnected");
   };
+
+  // 자동 스크롤
+  const msgref = useRef(null);
+  const scroll = () => {
+    msgref.current?.scrollIntoView({ behavior: "smooth" });
+  };
+
+  useEffect(() => {
+    scroll();
+  }, [receiveChats]);
+
   return (
     <div
       style={{
@@ -87,19 +99,20 @@ const Chat = (prop) => {
         backgroundSize: "cover",
         height: "100vh",
         width: "100%",
+        maxWidth: "100%",
+        position: "absolute",
+        left: "0%",
+        top: "0%",
       }}
     >
       <div
-        style={{ position: "absolute", top: "60%", background: "transparent" }}
+        style={{
+          position: "absolute",
+          bottom: "25%",
+          background: "transparent",
+        }}
       >
-        <div
-          style={{
-            width: "600px",
-            height: "270px",
-            border: "1px",
-            overflow: "auto",
-          }}
-        >
+        <div className="chatting">
           {receiveChats.map((info) => {
             return (
               <div
@@ -111,7 +124,8 @@ const Chat = (prop) => {
                   color: "#218FFE",
                 }}
               >
-                • [{info.userName}]: {info.message}, {info.id}
+                • [{info.userName}]: {info.message}
+                <div ref={msgref} />
               </div>
             );
           })}
