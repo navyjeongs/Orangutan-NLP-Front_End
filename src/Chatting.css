@@ -1,0 +1,15 @@
+.chatting {
+    width : 550px;
+    height : 270px;
+    border: 1px;
+    overflow: overlay;
+}
+
+::-webkit-scrollbar {
+    width : 0.5vw;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: hsla(0, 0%, 42%, 0.49);
+    border-radius: 100px;
+}
