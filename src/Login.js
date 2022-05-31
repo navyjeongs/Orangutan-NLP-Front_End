@@ -51,6 +51,7 @@ const Login = () => {
           variant="outlined"
           value={name}
           onChange={settingName}
+          required
         />
         <div>
           <Button type="submit">설정하기</Button>

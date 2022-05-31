@@ -13,3 +13,12 @@
     background-color: hsla(0, 0%, 42%, 0.49);
     border-radius: 100px;
 }
+
+.input{
+    border: 0.1px solid black;
+}
+
+.input:focus{
+    outline: none;
+    background: transparent;
+}

@@ -3,7 +3,6 @@ import { v4 as uuidv4 } from "uuid";
 import image from "./playVideo/test.png";
 import "./font/font.css";
 import { Client } from "@stomp/stompjs";
-import { UserDispatch } from "./App";
 import "./Chatting.css";
 
 const Chat = (prop) => {
@@ -130,8 +129,12 @@ const Chat = (prop) => {
             );
           })}
         </div>
-        <form onSubmit={sendChat} style={{ background: "transparent" }}>
+        <form
+          onSubmit={sendChat}
+          style={{ background: "transparent", padding: "15px 0 0 0" }}
+        >
           <input
+            className="input"
             style={{
               width: "500px",
               height: "22px",
