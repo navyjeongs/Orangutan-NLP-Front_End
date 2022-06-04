@@ -107,7 +107,7 @@ const Chat = (prop) => {
       <div
         style={{
           position: "absolute",
-          bottom: "25%",
+          bottom: "30%",
           background: "transparent",
         }}
       >
@@ -117,10 +117,11 @@ const Chat = (prop) => {
               <div
                 key={info.id}
                 style={{
-                  margin: "0px 0px 5px 40px",
+                  margin: "0px 0px 9px 15px",
                   fontFamily: "koverwatch",
                   fontSize: "22px",
-                  color: "#218FFE",
+                  color: "#01befa",
+                  direction: "ltr",
                 }}
               >
                 • [{info.userName}]: {info.message}
@@ -134,7 +135,7 @@ const Chat = (prop) => {
           style={{ background: "transparent", padding: "15px 0 0 0" }}
         >
           <input
-            className="input"
+            className="inputss"
             style={{
               width: "500px",
               height: "22px",
