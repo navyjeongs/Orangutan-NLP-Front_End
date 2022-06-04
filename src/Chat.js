@@ -2,6 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import image from "./playVideo/test.png";
 import "./font/font.css";
+import "./font-2/font2.css";
 import { Client } from "@stomp/stompjs";
 import "./Chatting.css";
 
@@ -111,45 +112,47 @@ const Chat = (prop) => {
           background: "transparent",
         }}
       >
-        <div className="chatting">
-          {receiveChats.map((info) => {
-            return (
-              <div
-                key={info.id}
-                style={{
-                  margin: "0px 0px 9px 15px",
-                  fontFamily: "koverwatch",
-                  fontSize: "22px",
-                  color: "#01befa",
-                  direction: "ltr",
-                }}
-              >
-                • [{info.userName}]: {info.message}
-                <div ref={msgref} />
-              </div>
-            );
-          })}
+        <div className="chat">
+          <div className="chatting">
+            {receiveChats.map((info) => {
+              return (
+                <div
+                  className="fontwei"
+                  key={info.id}
+                  style={{
+                    margin: "7px 0px 0px 10px",
+                    fontFamily: "koverwatch",
+                    fontSize: "23px",
+                    color: "#01befa",
+                    direction: "ltr",
+                  }}
+                >
+                  • [{info.userName}]: {info.message}
+                  <div ref={msgref} />
+                </div>
+              );
+            })}
+          </div>
+          <form
+            onSubmit={sendChat}
+            style={{ background: "transparent", padding: "15px 0 0 0" }}
+          >
+            <input
+              className="input"
+              style={{
+                width: "545px",
+                height: "28px",
+                margin: "8px 0px 0px 0px",
+                color: "white",
+                fontFamily: "koverwatch",
+                fontSize: "28px",
+              }}
+              type="text"
+              onChange={onChangeText}
+              value={writeChat.text}
+            ></input>
+          </form>
         </div>
-        <form
-          onSubmit={sendChat}
-          style={{ background: "transparent", padding: "15px 0 0 0" }}
-        >
-          <input
-            className="inputss"
-            style={{
-              width: "500px",
-              height: "22px",
-              margin: "0px 0px 0px 40px",
-              background: "transparent",
-              color: "white",
-              fontFamily: "koverwatch",
-              fontSize: "22px",
-            }}
-            type="text"
-            onChange={onChangeText}
-            value={writeChat.text}
-          ></input>
-        </form>
       </div>
     </div>
   );
