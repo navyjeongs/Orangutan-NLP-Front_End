@@ -2,7 +2,7 @@ import { useContext, useEffect, useRef, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import image from "./playVideo/test.png";
 import "./font/font.css";
-import "./font-2/font2.css";
+// import "./font-2/font2.css";
 import { Client } from "@stomp/stompjs";
 import "./Chatting.css";
 
