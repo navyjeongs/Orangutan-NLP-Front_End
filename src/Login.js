@@ -23,7 +23,7 @@ const Login = () => {
 
   return (
     <div>
-      <h2 style={{ textAlign: "center" }}>Orangutan-NLP</h2>
+      <h2 style={{ textAlign: "center" }}>Orangutan-Filtering</h2>
       <div
         style={{
           backgroundImage: `url(${image})`,
@@ -32,7 +32,7 @@ const Login = () => {
           width: "50%",
           position: "absolute",
           left: "25%",
-          top: "20%",
+          top: "25%",
         }}
       ></div>
       <form
@@ -54,7 +54,13 @@ const Login = () => {
           required
         />
         <div>
-          <Button type="submit">설정하기</Button>
+          <Button
+            type="submit"
+            variant="outlined"
+            style={{ margin: "5px 0 0 0" }}
+          >
+            설정하기
+          </Button>
         </div>
       </form>
     </div>
